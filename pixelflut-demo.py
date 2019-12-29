@@ -9,7 +9,7 @@ logging.info('Connecting to...:' + sys.argv[1] + ':' + sys.argv[2])
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect((sys.argv[1], int(sys.argv[2])))
 sock.send('OFFSET %d %d\n' % (xoffset, yoffset))
-
+logging.info('connected')
 
 def pixel(x,y,r,g,b,a=255):
   if a == 255:
