@@ -1,9 +1,11 @@
 import sys
 import socket
+import logging
 from PIL import Image
 
 xoffset, yoffset = 100, 100
 
+logging.info('Connecting to...:' + sys.argv[1] + ':' + sys.argv[2])
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect((sys.argv[1], int(sys.argv[2])))
 sock.send('OFFSET %d %d\n' % (xoffset, yoffset))
